@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEZLO CUT</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 8%;
+            background:
+                radial-gradient(circle at 80% 20%, #252525, transparent 35%),
+                radial-gradient(circle at 20% 80%, #151515, transparent 35%),
+                #050505;
+        }
+
+        .hero small {
+            color: #888;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 10vw, 140px);
+            line-height: 0.9;
+            letter-spacing: -6px;
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: #aaa;
+            font-size: 18px;
+            margin: 30px 0;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            width: fit-content;
+            padding: 15px 25px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #ddd;
+        }
+
+        section {
+            padding: 120px 8%;
+        }
+
+        .section-title {
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+
+        .portfolio {
+            min-height: 500px;
+            border: 1px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            padding: 40px;
+            border: 1px solid #222;
+            background: #0b0b0b;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .request {
+            text-align: center;
+            background: #0b0b0b;
+        }
+
+        .request h2 {
+            font-size: 60px;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #222;
+            color: #555;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">PEZLO CUT</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#request">Request</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="hero" id="home">
+        <small>VIDEO EDITOR • CREATOR</small>
+
+        <h1>PEZLO<br>CUT</h1>
+
+        <p>
+            Turning raw footage into edits that actually hit.
+            Cinematic visuals, clean transitions and powerful storytelling.
+        </p>
+
+        <a href="#request" class="button">Request an Edit</a>
+    </section>
+
+
+    <section id="work">
+        <h2 class="section-title">Selected Work</h2>
+
+        <div class="portfolio">
+            <p>Your future edits will appear here.</p>
+        </div>
+    </section>
+
+
+    <section id="services">
+        <h2 class="section-title">Services</h2>
+
+        <div class="services">
+
+            <div class="service">
+                <h3>Short Form</h3>
+                <p>
+                    TikTok, Reels and Shorts with fast pacing,
+                    strong hooks and modern editing.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Cinematic</h3>
+                <p>
+                    Cinematic edits with music, transitions,
+                    effects and storytelling.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Football Edits</h3>
+                <p>
+                    High-energy football edits designed
+                    for social media.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="request" id="request">
+        <h2>Have a project?</h2>
+
+        <p style="color:#888; margin-bottom:30px;">
+            Let's turn your idea into an edit.
+        </p>
+
+        <a href="#" class="button">Request an Edit</a>
+    </section>
+
+
+    <footer>
+        © 2026 PEZLO CUT. All rights reserved.
+    </footer>
+
+</body>
+</html>
