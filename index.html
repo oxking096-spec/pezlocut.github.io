@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEZLO CUT</title>
+
+    <title>Pezlo Cut</title>
+
+    <!-- P FAVICON -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23060916'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-size='70' font-family='Georgia' font-weight='bold' font-style='italic' fill='%237dd3fc'%3EP%3C/text%3E%3C/svg%3E">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -15,261 +20,910 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #050505;
             color: white;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(30, 64, 175, 0.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(124, 58, 237, 0.22),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(14, 116, 144, 0.18),
+                    transparent 35%
+                ),
+
+                #050816;
+
+            background-attachment: fixed;
+            overflow-x: hidden;
         }
+
+
+        /* NAVIGATION */
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 22px 8%;
+
+            padding: 20px 8%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(12px);
+
+            background: rgba(5, 8, 22, 0.65);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 3px;
-        }
 
-        nav ul {
+        .brand {
             display: flex;
-            gap: 30px;
-            list-style: none;
+            align-items: center;
+            gap: 12px;
         }
 
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            transition: 0.3s;
-        }
 
-        nav a:hover {
-            color: white;
-        }
+        /* P LOGO */
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 120px 8%;
-            background:
-                radial-gradient(circle at 80% 20%, #252525, transparent 35%),
-                radial-gradient(circle at 20% 80%, #151515, transparent 35%),
-                #050505;
-        }
+        .logo-icon {
+            width: 43px;
+            height: 43px;
 
-        .hero small {
-            color: #888;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(60px, 10vw, 140px);
-            line-height: 0.9;
-            letter-spacing: -6px;
-        }
-
-        .hero p {
-            max-width: 550px;
-            color: #aaa;
-            font-size: 18px;
-            margin: 30px 0;
-            line-height: 1.6;
-        }
-
-        .button {
-            display: inline-block;
-            width: fit-content;
-            padding: 15px 25px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            background: #ddd;
-        }
-
-        section {
-            padding: 120px 8%;
-        }
-
-        .section-title {
-            font-size: 50px;
-            margin-bottom: 50px;
-        }
-
-        .portfolio {
-            min-height: 500px;
-            border: 1px solid #222;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #555;
-        }
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+            border: 1px solid rgba(125,211,252,0.8);
 
-        .service {
-            padding: 40px;
-            border: 1px solid #222;
-            background: #0b0b0b;
+            border-radius: 12px;
+
+            color: #7dd3fc;
+
+            font-family: Georgia, serif;
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+            font-style: italic;
+
+            letter-spacing: -3px;
+
+            box-shadow:
+                0 0 20px rgba(56,189,248,0.18);
+
             transition: 0.3s;
         }
 
-        .service:hover {
-            transform: translateY(-5px);
-            border-color: #555;
+
+        .logo-icon:hover {
+
+            transform:
+                rotate(-8deg)
+                scale(1.08);
+
+            box-shadow:
+                0 0 30px rgba(56,189,248,0.35);
         }
 
+
+        /* BRAND */
+
+        .logo-text {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+
+        nav a {
+
+            color: #aab4c8;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+
+            color: #7dd3fc;
+        }
+
+
+        /* HERO */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding: 120px 8%;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background:
+                rgba(59,130,246,0.12);
+
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            right: -100px;
+
+            top: 100px;
+        }
+
+
+        .hero small {
+
+            color: #7dd3fc;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+        }
+
+
+        .hero h1 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(65px, 11vw, 150px);
+
+            line-height: 0.85;
+
+            letter-spacing: -7px;
+
+            position: relative;
+
+            text-shadow:
+                0 0 40px rgba(125,211,252,0.08);
+        }
+
+
+        .hero p {
+
+            max-width: 560px;
+
+            color: #9ca9bf;
+
+            font-size: 18px;
+
+            margin: 35px 0;
+
+            line-height: 1.7;
+
+            position: relative;
+        }
+
+
+        /* BUTTON */
+
+        .button {
+
+            display: inline-block;
+
+            width: fit-content;
+
+            padding: 16px 27px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e0f2fe,
+                    #7dd3fc
+                );
+
+            color: #06101d;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 10px 35px
+                rgba(56,189,248,0.15);
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 45px
+                rgba(56,189,248,0.28);
+        }
+
+
+        /* SECTIONS */
+
+        section {
+
+            padding: 120px 8%;
+        }
+
+
+        .section-title {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 52px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* PORTFOLIO */
+
+        .portfolio {
+
+            min-height: 500px;
+
+            border:
+                1px solid
+                rgba(125,211,252,0.12);
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #56627a;
+
+            background:
+                rgba(9,15,35,0.45);
+
+            backdrop-filter:
+                blur(12px);
+
+            box-shadow:
+                inset 0 0 50px
+                rgba(59,130,246,0.03);
+        }
+
+
+        /* SERVICES */
+
+        .services {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .service {
+
+            padding: 40px;
+
+            border:
+                1px solid
+                rgba(125,211,252,0.1);
+
+            border-radius: 16px;
+
+            background:
+                rgba(10,16,35,0.58);
+
+            backdrop-filter:
+                blur(14px);
+
+            transition: 0.35s;
+        }
+
+
+        .service:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(125,211,252,0.35);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.25);
+        }
+
+
         .service h3 {
-            font-size: 24px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+
             margin-bottom: 15px;
         }
 
+
         .service p {
-            color: #888;
-            line-height: 1.6;
+
+            color: #8794aa;
+
+            line-height: 1.7;
         }
+
+
+        /* REQUEST */
 
         .request {
+
             text-align: center;
-            background: #0b0b0b;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(59,130,246,0.12),
+                    transparent 45%
+                ),
+
+                rgba(4,8,20,0.5);
         }
 
+
         .request h2 {
-            font-size: 60px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 62px;
+
             margin-bottom: 25px;
         }
 
-        footer {
-            padding: 30px 8%;
-            border-top: 1px solid #222;
-            color: #555;
-            text-align: center;
+
+        /* REQUEST FORM */
+
+        .request-form {
+
+            max-width: 600px;
+
+            margin: 40px auto 0;
+
+            text-align: left;
         }
 
+
+        .request-form input,
+        .request-form select,
+        .request-form textarea {
+
+            width: 100%;
+
+            padding: 17px;
+
+            margin-bottom: 15px;
+
+            background:
+                rgba(8,14,30,0.8);
+
+            border:
+                1px solid
+                rgba(125,211,252,0.12);
+
+            color: white;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .request-form input:focus,
+        .request-form select:focus,
+        .request-form textarea:focus {
+
+            border-color:
+                rgba(125,211,252,0.55);
+
+            box-shadow:
+                0 0 20px
+                rgba(56,189,248,0.08);
+        }
+
+
+        .request-form textarea {
+
+            height: 150px;
+
+            resize: vertical;
+        }
+
+
+        .request-form button {
+
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            padding: 30px 8%;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            color: #56627a;
+
+            text-align: center;
+
+            background:
+                rgba(3,6,16,0.6);
+        }
+
+
+        /* MOBILE */
+
         @media (max-width: 700px) {
+
+            nav {
+
+                padding:
+                    17px 5%;
+            }
+
+
             nav ul {
+
                 gap: 12px;
             }
 
+
             nav a {
-                font-size: 13px;
+
+                font-size: 12px;
             }
 
+
+            .logo-text {
+
+                font-size: 17px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .logo-icon {
+
+                width: 37px;
+
+                height: 37px;
+
+                font-size: 23px;
+            }
+
+
             .services {
+
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                letter-spacing: -3px;
+
+            .hero {
+
+                padding:
+                    120px 7%;
             }
+
+
+            .hero h1 {
+
+                letter-spacing: -4px;
+            }
+
+
+            .section-title {
+
+                font-size: 42px;
+            }
+
+
+            .request h2 {
+
+                font-size: 45px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+    <!-- NAVIGATION -->
+
     <nav>
-        <div class="logo">PEZLO CUT</div>
+
+        <div class="brand">
+
+            <div class="logo-icon">
+                P
+            </div>
+
+            <div class="logo-text">
+                Pezlo Cut
+            </div>
+
+        </div>
+
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#request">Request</a></li>
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#work">
+                    Work
+                </a>
+            </li>
+
+            <li>
+                <a href="#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="#request">
+                    Request
+                </a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <section class="hero" id="home">
-        <small>VIDEO EDITOR • CREATOR</small>
+    <!-- HERO -->
 
-        <h1>PEZLO<br>CUT</h1>
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <small>
+            VIDEO EDITOR • CREATOR
+        </small>
+
+
+        <h1>
+            PEZLO<br>
+            CUT
+        </h1>
+
 
         <p>
-            Turning raw footage into edits that actually hit.
-            Cinematic visuals, clean transitions and powerful storytelling.
+
+            Turning raw footage into
+            edits that actually hit.
+
+            Cinematic visuals,
+            clean transitions and
+            powerful storytelling.
+
         </p>
 
-        <a href="#request" class="button">Request an Edit</a>
+
+        <a
+            href="#request"
+            class="button"
+        >
+            Request an Edit
+        </a>
+
     </section>
 
+
+    <!-- PORTFOLIO -->
 
     <section id="work">
-        <h2 class="section-title">Selected Work</h2>
+
+        <h2 class="section-title">
+            Selected Work
+        </h2>
+
 
         <div class="portfolio">
-            <p>Your future edits will appear here.</p>
+
+            <p>
+                Your future edits will appear here.
+            </p>
+
         </div>
+
     </section>
 
 
+    <!-- SERVICES -->
+
     <section id="services">
-        <h2 class="section-title">Services</h2>
+
+        <h2 class="section-title">
+            Services
+        </h2>
+
 
         <div class="services">
 
-            <div class="service">
-                <h3>Short Form</h3>
-                <p>
-                    TikTok, Reels and Shorts with fast pacing,
-                    strong hooks and modern editing.
-                </p>
-            </div>
 
             <div class="service">
-                <h3>Cinematic</h3>
+
+                <h3>
+                    Short Form
+                </h3>
+
                 <p>
-                    Cinematic edits with music, transitions,
+
+                    TikTok, Reels and Shorts
+                    with fast pacing,
+                    strong hooks and
+                    modern editing.
+
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>
+                    Cinematic
+                </h3>
+
+                <p>
+
+                    Cinematic edits with
+                    music, transitions,
                     effects and storytelling.
+
                 </p>
+
             </div>
 
+
             <div class="service">
-                <h3>Football Edits</h3>
+
+                <h3>
+                    Football Edits
+                </h3>
+
                 <p>
-                    High-energy football edits designed
-                    for social media.
+
+                    High-energy football
+                    edits designed for
+                    social media.
+
                 </p>
+
             </div>
+
 
         </div>
+
     </section>
 
 
-    <section class="request" id="request">
-        <h2>Have a project?</h2>
+    <!-- REQUEST FORM -->
 
-        <p style="color:#888; margin-bottom:30px;">
-            Let's turn your idea into an edit.
+    <section
+        class="request"
+        id="request"
+    >
+
+        <h2>
+            Request an Edit
+        </h2>
+
+
+        <p
+            style="
+                color:#7f8da3;
+                margin-bottom:20px;
+            "
+        >
+
+            Tell me about your project
+            and I'll get back to you.
+
         </p>
 
-        <a href="#" class="button">Request an Edit</a>
+
+        <form
+            class="request-form"
+            action="https://formspree.io/f/mjybnvqp"
+            method="POST"
+        >
+
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+            >
+
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+            >
+
+
+            <select
+                name="edit_type"
+                required
+            >
+
+                <option value="">
+                    Choose your edit
+                </option>
+
+
+                <option value="Short Form">
+                    Short Form
+                </option>
+
+
+                <option value="Football Edit">
+                    Football Edit
+                </option>
+
+
+                <option value="Cinematic Edit">
+                    Cinematic Edit
+                </option>
+
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <textarea
+                name="message"
+                placeholder="Tell me about your project..."
+                required
+            ></textarea>
+
+
+            <input
+                type="text"
+                name="budget"
+                placeholder="Your budget"
+            >
+
+
+            <input
+                type="text"
+                name="deadline"
+                placeholder="When do you need it?"
+            >
+
+
+            <button
+                type="submit"
+                class="button"
+            >
+                Send Request
+            </button>
+
+
+        </form>
+
     </section>
 
 
+    <!-- FOOTER -->
+
     <footer>
-        © 2026 PEZLO CUT. All rights reserved.
+
+        © 2026 Pezlo Cut.
+        All rights reserved.
+
     </footer>
+
 
 </body>
 </html>
